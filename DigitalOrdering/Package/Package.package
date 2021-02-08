@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="f21540f3-2b05-4219-9bfb-34c7fbd8118c" solutionId="f21540f3-2b05-4219-9bfb-34c7fbd8118c" resetWebServer="false" name="DigitalOrdering" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
+  <assemblies>
+    <customAssembly location="itextsharp.dll" deploymentTarget="GlobalAssemblyCache" sourcePath="iTextSharp\itextsharp.dll" />
+    <customAssembly location="itextsharp.pdfa.dll" deploymentTarget="GlobalAssemblyCache" sourcePath="iTextSharp\itextsharp.pdfa.dll" />
+    <customAssembly location="itextsharp.xtra.dll" deploymentTarget="GlobalAssemblyCache" sourcePath="iTextSharp\itextsharp.xtra.dll" />
+  </assemblies>
+  <features>
+    <featureReference itemId="fcce126c-2c10-4a7b-a643-4b4f6704e09f" />
+  </features>
+</package>

@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8BF81F92-8060-41E6-B4C6-E191344FD575}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DigitalOrdering</RootNamespace>
+    <AssemblyName>DigitalOrdering</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{BB1F664B-9266-4fd6-B973-E1E44974B511};{14822709-B5A1-4724-98CA-57A101D1B079};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <SandboxedSolution>False</SandboxedSolution>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>key.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="itextsharp, Version=5.5.8.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>iTextSharp\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp.pdfa, Version=5.5.8.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>iTextSharp\itextsharp.pdfa.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp.xtra, Version=5.5.8.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>iTextSharp\itextsharp.xtra.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Server.UserProfiles, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files\Common Files\Microsoft Shared\Web Server Extensions\14\ISAPI\Microsoft.Office.Server.UserProfiles.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SharePoint.Security, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files\Common Files\Microsoft Shared\Web Server Extensions\14\ISAPI\Microsoft.SharePoint.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Microsoft.SharePoint" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Classes\EventReceiverManager.cs" />
+    <Compile Include="Classes\InfoPathAttachmentDecoder.cs" />
+    <Compile Include="Classes\InfoPathAttachmentEncoder.cs" />
+    <Compile Include="Classes\Order.cs" />
+    <Compile Include="Classes\Requirement.cs" />
+    <Compile Include="EventReceiver\OrderFormArchived\OrderFormArchived.cs" />
+    <Compile Include="EventReceiver\OrderFormSubmitted\OrderFormSubmitted.cs" />
+    <Compile Include="EventReceiver\OrderPdfArchived\OrderPdfArchived.cs" />
+    <Compile Include="EventReceiver\OrderPdfDeleting\OrderPdfDeleting.cs" />
+    <Compile Include="EventReceiver\OrderPdfUpdated\OrderPdfUpdated.cs" />
+    <Compile Include="EventReceiver\RequirementFormSubmitted\RequirementFormSubmitted.cs" />
+    <Compile Include="EventReceiver\RequirementPdfDeleting\RequirementPdfDeleting.cs" />
+    <Compile Include="EventReceiver\RequirementPdfUpdated\RequirementPdfUpdated.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="EventReceiver\OrderFormArchived\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{87233a4f-e1f1-4050-8b41-9c5f0a4d40b6}</SharePointProjectItemId>
+    </None>
+    <None Include="EventReceiver\OrderFormSubmitted\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{532b6614-ffdb-47f9-890b-22c3c749c97e}</SharePointProjectItemId>
+    </None>
+    <None Include="EventReceiver\OrderPdfArchived\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{18284fb2-08c0-4299-8176-e78bd00f44e4}</SharePointProjectItemId>
+    </None>
+    <None Include="EventReceiver\OrderPdfDeleting\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{c4634864-5309-4304-8f3c-5fa9c37a2e76}</SharePointProjectItemId>
+    </None>
+    <None Include="EventReceiver\OrderPdfUpdated\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{06140306-aebb-4a79-b1b4-0d5deef51f9c}</SharePointProjectItemId>
+    </None>
+    <None Include="EventReceiver\RequirementFormSubmitted\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{c35bea81-6164-4134-b60b-62f875714420}</SharePointProjectItemId>
+    </None>
+    <None Include="EventReceiver\RequirementPdfDeleting\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{4308135c-1a4c-4f2e-8b97-f94ff39f58de}</SharePointProjectItemId>
+    </None>
+    <None Include="EventReceiver\RequirementPdfUpdated\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{7185c6bd-0e0f-4127-86f6-5e3936c7d2a9}</SharePointProjectItemId>
+    </None>
+    <None Include="Features\Feature1\Feature1.feature">
+      <FeatureId>{fcce126c-2c10-4a7b-a643-4b4f6704e09f}</FeatureId>
+    </None>
+    <None Include="key.snk" />
+    <None Include="Package\Package.package">
+      <PackageId>{f21540f3-2b05-4219-9bfb-34c7fbd8118c}</PackageId>
+    </None>
+    <None Include="Package\Package.Template.xml">
+      <DependentUpon>Package.package</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="EventReceiver\OrderFormArchived\Elements.xml" />
+    <Content Include="EventReceiver\OrderFormSubmitted\Elements.xml" />
+    <Content Include="EventReceiver\OrderPdfArchived\Elements.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="EventReceiver\OrderPdfDeleting\Elements.xml" />
+    <Content Include="EventReceiver\OrderPdfUpdated\Elements.xml" />
+    <Content Include="EventReceiver\RequirementFormSubmitted\Elements.xml" />
+    <Content Include="EventReceiver\RequirementPdfDeleting\Elements.xml" />
+    <Content Include="EventReceiver\RequirementPdfUpdated\Elements.xml" />
+    <Content Include="Features\Feature1\Feature1.Template.xml">
+      <DependentUpon>Feature1.feature</DependentUpon>
+    </Content>
+    <Content Include="iTextSharp\itextsharp.dll" />
+    <Content Include="iTextSharp\itextsharp.pdfa.dll" />
+    <Content Include="iTextSharp\itextsharp.xtra.dll" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(VSToolsPath)\SharePointTools\Microsoft.VisualStudio.SharePoint.targets" Condition="'$(VSToolsPath)' != ''" />
+</Project>
