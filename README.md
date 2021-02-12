@@ -30,14 +30,14 @@ This is a list of all the event receivers:
 
 The following librariees have to exist in the site.
 - Form libraries
- - "Auftragsformular"
- - "Auftragsformular-Archiv"
+   - "Auftragsformular"
+   - "Auftragsformular-Archiv"
 - Document libraries:
- - "Auftragszettel"
- - "Begründung"
- - "Temp"
- - "Auftragszettel-Archiv"
+   - "Auftragszettel"
+   - "Begründung"
+   - "Temp"
+   - "Auftragszettel-Archiv"
 
-There are two SharePoint Designer workflows. You can check the activity diagram to know what each workflow is doing.
+There are two SharePoint Designer workflows. You can check the activity diagram to know what each workflow is doing. They just use the standard actions that SharePoint offers OOTB.
 - "Daten übergeben" (attached to library "Auftragszettel")
 - "Unterschriftenlauf" (attached to library "Auftragszettel")
