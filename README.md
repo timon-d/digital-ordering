@@ -7,7 +7,7 @@ However, you can of course pull this repository and build and deploy this soluti
 
 ## Activity diagram
 This is a activity diagram which illustrates the different components that are used in the workflow. The green blocks show the event receivers. These are the ones you get, when you clone this reopsitory.
-![Order process](https://github.com/timon-d/digital-ordering/order_process.png?raw=true)
+![Order process](https://github.com/timon-d/digital-ordering/blob/main/order_process.png?raw=true)
 
 ## Event Receivers
 This is a list of all the event receivers:
